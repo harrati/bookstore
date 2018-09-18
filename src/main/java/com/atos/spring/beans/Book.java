@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -15,8 +16,20 @@ public class Book {
 	String description;
 	String isbn;
 	
+	@ManyToOne
+	Author author;
 	
 	
+	
+	
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
